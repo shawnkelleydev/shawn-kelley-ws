@@ -190,11 +190,28 @@ function displayProject(text) {
   const a = projectBox.querySelectorAll("a");
   const liveA = a[0];
   const ghA = a[1];
-  const desc = projectBox.querySelector("p");
+  const desc = projectBox.querySelector("#desc");
 
   title.innerText = o.name;
-  featurePicSpan.innerHTML = `<img src="${o.img}">`;
-  liveA.setAttribute("href", `${o.live}`);
-  ghA.setAttribute("href", `${o.github}`);
-  desc.innerText = o.description;
+  if (o.img) {
+    featurePicSpan.innerHTML = `<img src="${o.img}">`;
+  } else {
+    featurePicSpan.innerHTML = ``;
+  }
+  if (o.live) {
+    console.log("if");
+    liveA.setAttribute("href", `${o.live}`);
+    ghA.setAttribute("href", `${o.github}`);
+    liveA.style.display = "block";
+    ghA.style.display = "block";
+  } else {
+    console.log("else");
+    liveA.style.display = "none";
+    ghA.style.display = "none";
+  }
+  if (o.description) {
+    desc.innerHTML = o.description;
+  } else {
+    desc.innerHTML = "";
+  }
 }
