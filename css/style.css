@@ -136,6 +136,11 @@ button {
   top: 80px;
 }
 
+header,
+.project-selector-container {
+  transition: top 0.3s ease;
+}
+
 .projects {
   display: flex;
   flex-direction: column;

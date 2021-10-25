@@ -6,6 +6,9 @@
 
 const projects = document.getElementById("projects");
 const header = document.querySelector("header");
+const projectSelectorDiv = document.querySelector(
+  ".project-selector-container"
+);
 const footer = document.querySelector("footer");
 const biobox = document.querySelector(".bio-box");
 const blue = "rgb(0, 13, 131)";
@@ -130,3 +133,20 @@ function projectListener(ul) {
     }
   });
 }
+
+let startWindow = 0;
+
+window.onscroll = () => {
+  const current = window.pageYOffset;
+  if (current > startWindow) {
+    //down
+    header.style.top = "-100px";
+    projectSelectorDiv.style.top = "-500px";
+    startWindow = current;
+  } else {
+    //up
+    header.style.top = "0";
+    projectSelectorDiv.style.top = "80px";
+    startWindow = current;
+  }
+};
