@@ -199,13 +199,11 @@ function displayProject(text) {
     featurePicSpan.innerHTML = ``;
   }
   if (o.live) {
-    console.log("if");
     liveA.setAttribute("href", `${o.live}`);
     ghA.setAttribute("href", `${o.github}`);
     liveA.style.display = "block";
     ghA.style.display = "block";
   } else {
-    console.log("else");
     liveA.style.display = "none";
     ghA.style.display = "none";
   }

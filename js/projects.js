@@ -39,6 +39,33 @@ const tech = [
       "<p>Student List Pagination was a coding challenge from Team Treehouse.  The page sorts a list of 42 students into pages of 12 and includes search functionality.</p>",
     otherImg: ["img/project-2/full.png"],
   },
+  {
+    name: "Responsive Form",
+    img: "img/project-3/header.png",
+    live: "https://shawnkelleyart.github.io/techdegree-project-3/",
+    github: "https://github.com/shawnkelleyart/techdegree-project-3",
+    description:
+      "<p>Responsive Form was an HTML Form / RegEx coding challenge from Team Treehouse.  I contributed live RegEx validation, total calculation, and schedule conflict prevention.</p>",
+    otherImg: ["img/project-3/activities.png", "img/project-3/cc.png"],
+  },
+  {
+    name: "Phrase Hunter",
+    img: "img/project-4/title.png",
+    live: "https://shawnkelleyart.github.io/techdegree-project-4/",
+    github: "https://github.com/shawnkelleyart/techdegree-project-4",
+    description:
+      "<p>Phrase Hunter was an OOP coding challenge from Team Treehouse.  The game randomly selects a phrase and responds to user keyboard input.</p>",
+    otherImg: ["img/project-4/full.png", "img/project-4/action.png"],
+  },
+  {
+    name: "Public API Requests",
+    img: "img/project-5/search.png",
+    live: "https://shawnkelleyart.github.io/techdegree-project-5/",
+    github: "https://github.com/shawnkelleyart/techdegree-project-5",
+    description:
+      "<p>Phrase Hunter was an OOP coding challenge from Team Treehouse.  The game randomly selects a phrase and responds to user keyboard input.</p>",
+    otherImg: "img/project-5/full.png",
+  },
 ];
 
 const music = [
