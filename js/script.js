@@ -153,7 +153,7 @@ window.onscroll = () => {
     //down
     header.style.top = "-800px";
     startWindow = current;
-  } else if (current === 0) {
+  } else if (current <= 0) {
     //up
     header.style.top = "0";
     startWindow = current;
