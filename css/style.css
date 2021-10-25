@@ -46,8 +46,8 @@ header {
   background: var(--blue);
   color: white;
   position: fixed;
-  top: calc(100vh - 100px);
-  height: 100px;
+  top: calc(100vh - 200px);
+  height: 200px;
 }
 
 footer {
@@ -124,7 +124,7 @@ button {
 
 .projects {
   position: fixed;
-  top: calc(100vh-200px);
+  top: calc(100vh-300px);
   display: flex;
   flex-direction: column-reverse;
   background-color: var(--alt);
