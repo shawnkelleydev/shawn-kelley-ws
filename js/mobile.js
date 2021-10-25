@@ -185,15 +185,20 @@ function displayProject(text) {
   }
   let o = arr[0];
   //write content
-  const title = projectBox.querySelector("h1");
-  const featurePicSpan = projectBox.querySelector("span");
+  const title = projectBox.querySelectorAll("span")[0];
+  const featurePicSpan = projectBox.querySelectorAll("span")[1];
   const a = projectBox.querySelectorAll("a");
   const liveA = a[0];
   const ghA = a[1];
   const pieceA = a[2];
   const desc = projectBox.querySelector("#desc");
 
-  title.innerText = o.name;
+  if (o.title_img) {
+    title.innerHTML = `<img src="${o.title_img}" alt="${o.title_img_alt}" class="title_img">`;
+  } else {
+    title.innerHTML = `<h1>${o.name}</h1>`;
+  }
+
   if (o.img) {
     featurePicSpan.innerHTML = `<img src="${o.img}">`;
   } else {

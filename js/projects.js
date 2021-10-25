@@ -71,6 +71,8 @@ const tech = [
 const music = [
   {
     name: "Urban Suite",
+    title_img: "img/pieces/us.png",
+    title_img_alt: "Urban Suite in scripted font",
     img: "img/pieces/us.jpg",
     instrumentation: "EETT",
     length: "apx. 12 minutes",
@@ -80,6 +82,8 @@ const music = [
   {
     name: "An Off Day",
     img: "img/pieces/anoffday.jpg",
+    title_img: "img/pieces/aod.png",
+    title_img_alt: "An Off Day in scripted font",
     instrumentation: "EETT",
     length: "",
     challenge: "medium-hard",
@@ -88,6 +92,8 @@ const music = [
   {
     name: "Home Suite Home",
     img: "img/pieces/homesuitehome.jpg",
+    title_img: "img/pieces/hsh.png",
+    title_img_alt: "Home Suite Home in scripted font",
     instrumentation: "EETT",
     length: "",
     challenge: "medium-hard",
