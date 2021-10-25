@@ -6,11 +6,13 @@
 
 const projects = document.getElementById("projects");
 const header = document.querySelector("header");
+const headspace = document.querySelector(".headspace");
 const projectSelectorDiv = document.querySelector(
   ".project-selector-container"
 );
 const footer = document.querySelector("footer");
-const biobox = document.querySelector(".bio-box");
+const bioBox = document.querySelector(".bio-box");
+const profileBox = document.querySelector(".profile-box");
 const blue = "rgb(0, 13, 131)";
 
 /*======
@@ -81,8 +83,9 @@ function navigate(e) {
     resetColors(navUL, "white");
     toggleBtn(li[2]);
     projects.innerHTML = ``;
-    if (biobox.style.display === "none") {
-      toggleDisplay(biobox);
+    if (bioBox.style.display === "none") {
+      toggleDisplay(bioBox);
+      toggleDisplay(profileBox);
     }
   }
 }
@@ -123,16 +126,27 @@ function mobileProjectToggle(ul) {
 function projectListener(ul) {
   ul.addEventListener("click", (e) => {
     const items = ul.children;
-
+    //checks for project click
     if (items[0].innerText === "Projects") {
-      if (e.target !== items[0] && biobox.style.display !== "none") {
-        toggleDisplay(biobox);
+      //hides about boxes
+      if (e.target !== items[0] && bioBox.style.display !== "none") {
+        toggleDisplay(bioBox);
+        toggleDisplay(profileBox);
       }
-      if (e.target === items[1]) {
+      //hides project menu once project is selected
+      if (e.target !== items[0]) {
+        for (let i = 0; i < items.length; i++) {
+          items[i].style.display = "none";
+        }
       }
+
+      // if (e.target === items[1]) {
+      // }
     }
   });
 }
+
+//hide / show mobile menu with scroll
 
 let startWindow = 0;
 
@@ -141,7 +155,6 @@ window.onscroll = () => {
   if (current > startWindow) {
     //down
     header.style.top = "-800px";
-
     startWindow = current;
   } else {
     //up
