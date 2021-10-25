@@ -1,6 +1,8 @@
 const tech = [
   {
     name: "First light",
+    title_img: "img/first_light/firstlight.png",
+    title_img_alt: "First Light in scripted font",
     img: "img/first_light/basic.png",
     live: "https://shawnkelleyart.github.io/FirstLight/",
     github: "https://github.com/shawnkelleyart/FirstLight",
@@ -10,6 +12,8 @@ const tech = [
   },
   {
     name: "Tomorrow Land",
+    title_img: "img/tomorrow_land/tomorrowland.png",
+    title_img_alt: "Tomorrow Land in scripted font",
     img: "img/tomorrow_land/edit.png",
     live: "https://shawnkelleyart.github.io/TomorrowLand/",
     github: "https://github.com/shawnkelleyart/TomorrowLand",
@@ -45,17 +49,17 @@ const tech = [
     live: "https://shawnkelleyart.github.io/techdegree-project-3/",
     github: "https://github.com/shawnkelleyart/techdegree-project-3",
     description:
-      "<p>Responsive Form was an HTML Form / RegEx coding challenge from Team Treehouse.  I contributed live RegEx validation, total calculation, and schedule conflict prevention.</p>",
+      "<p>Responsive Form was an HTML Form / RegEx coding challenge from Team Treehouse.  I contributed live RegEx validation, total calculation, and schedule conflict prevention via JavaScript.</p>",
     otherImg: ["img/project-3/activities.png", "img/project-3/cc.png"],
   },
   {
     name: "Phrase Hunter",
-    img: "img/project-4/title.png",
+    img: "img/project-4/action.png",
     live: "https://shawnkelleyart.github.io/techdegree-project-4/",
     github: "https://github.com/shawnkelleyart/techdegree-project-4",
     description:
       "<p>Phrase Hunter was an OOP coding challenge from Team Treehouse.  The game randomly selects a phrase and responds to user keyboard input.</p>",
-    otherImg: ["img/project-4/full.png", "img/project-4/action.png"],
+    otherImg: ["img/project-4/full.png", "img/project-4/title.png"],
   },
   {
     name: "Public API Requests",
