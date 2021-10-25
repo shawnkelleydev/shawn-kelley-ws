@@ -139,9 +139,6 @@ function projectListener(ul) {
           items[i].style.display = "none";
         }
       }
-
-      // if (e.target === items[1]) {
-      // }
     }
   });
 }
@@ -156,8 +153,11 @@ window.onscroll = () => {
     //down
     header.style.top = "-800px";
     startWindow = current;
-  } else {
+  } else if (current === 0) {
     //up
+    header.style.top = "0";
+    startWindow = current;
+  } else {
     header.style.top = "0";
     startWindow = current;
   }
