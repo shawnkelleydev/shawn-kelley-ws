@@ -140,13 +140,12 @@ window.onscroll = () => {
   const current = window.pageYOffset;
   if (current > startWindow) {
     //down
-    header.style.top = "-100px";
-    projectSelectorDiv.style.top = "-500px";
+    header.style.top = "-800px";
+
     startWindow = current;
   } else {
     //up
     header.style.top = "0";
-    projectSelectorDiv.style.top = "80px";
     startWindow = current;
   }
 };

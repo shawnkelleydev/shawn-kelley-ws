@@ -48,20 +48,11 @@ header {
   color: white;
   position: fixed;
   background-color: var(--blue);
+  transition: top 0.3s ease;
 }
 
 .headspace,
-header,
-.projects li {
-  height: 80px;
-}
-
-footer {
-  text-align: center;
-  font-size: 0.8em;
-  margin-top: 50px;
-}
-
+.projects li,
 nav {
   height: 80px;
 }
@@ -75,6 +66,35 @@ nav > ul > li {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: none;
+  background-color: var(--blue);
+}
+
+.projects,
+header {
+  border-radius: 0 0 20px 20px;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--alt);
+}
+
+.projects li {
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-container {
+  display: none;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.8em;
+  margin-top: 50px;
 }
 
 .profile-box {
@@ -131,29 +151,7 @@ button {
   margin-left: 5px;
 }
 
-.project-selector-container {
+/* .project-selector-container {
   position: fixed;
   top: 80px;
-}
-
-header,
-.project-selector-container {
-  transition: top 0.3s ease;
-}
-
-.projects {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--alt);
-  border-radius: 0 0 20px 20px;
-}
-
-.projects li {
-  display: none;
-  align-items: center;
-  justify-content: center;
-}
-
-.project-container {
-  display: none;
-}
+} */
