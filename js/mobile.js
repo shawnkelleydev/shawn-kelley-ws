@@ -13,7 +13,8 @@ const projectSelectorDiv = document.querySelector(
 const footer = document.querySelector("footer");
 const bioBox = document.querySelector(".bio-box");
 const profileBox = document.querySelector(".profile-box");
-const blue = "rgb(0, 13, 131)";
+const projectBox = document.querySelector(".project-container");
+const blue = "rgb(0, 10, 95)";
 
 /*======
 
@@ -47,14 +48,29 @@ function toggleDisplay(element) {
   }
 }
 
-/*============
+/*======
 
-  MOBILE NAV
+  NAV
 
-============*/
+======*/
 
-const navheight = "300px";
+//hide / show mobile menu with scroll
+let startWindow = 0;
 
+window.onscroll = () => {
+  const current = window.pageYOffset;
+  //>50 prevents problems at position 0
+  if (current > startWindow && current > 50) {
+    //down
+    header.style.top = "-800px";
+    startWindow = current;
+  } else {
+    header.style.top = "0";
+    startWindow = current;
+  }
+};
+
+//static declarations
 const navUL = document.querySelector("nav").children[0];
 const li = navUL.children;
 
@@ -68,7 +84,6 @@ function writeProjectDisplay(navLI, projectsOb) {
     projects.insertAdjacentHTML("beforeend", `<li>${projectsOb[i].name}</li>`);
   }
   mobileProjectToggle(projects);
-  projectListener(projects);
 }
 
 toggleBtn(li[2]); //default = about
@@ -77,11 +92,18 @@ toggleBtn(li[2]); //default = about
 function navigate(e) {
   if (e.target === li[0]) {
     writeProjectDisplay(li[0], tech);
+    if (
+      projectBox.style.display === "none" ||
+      projectBox.style.display === ""
+    ) {
+      toggleDisplay(projectBox);
+    }
   } else if (e.target === li[1]) {
     writeProjectDisplay(li[1], music);
   } else if (e.target === li[2]) {
     resetColors(navUL, "white");
     toggleBtn(li[2]);
+    projectBox.style.display = "none";
     projects.innerHTML = ``;
     if (bioBox.style.display === "none") {
       toggleDisplay(bioBox);
@@ -95,13 +117,13 @@ navUL.addEventListener("click", (e) => {
   navigate(e);
 });
 
-/*============
+/*===============
 
-  PROJECTS
+  PROJECT MENU
 
-============*/
+===============*/
 
-//  MOBILE PROJECT MENU TOGGLE -- CB in navUL listener
+//  TOGGLE -- CB in navUL listener
 
 function mobileProjectToggle(ul) {
   const items = ul.children;
@@ -123,38 +145,56 @@ function mobileProjectToggle(ul) {
 
 //  PROJECT UL LISTENER / PAGE WRITER -- CB in navUL listener
 
-function projectListener(ul) {
-  ul.addEventListener("click", (e) => {
-    const items = ul.children;
-    //checks for project click
-    if (items[0].innerText === "Projects") {
-      //hides about boxes
-      if (e.target !== items[0] && bioBox.style.display !== "none") {
-        toggleDisplay(bioBox);
-        toggleDisplay(profileBox);
-      }
-      //hides project menu once project is selected
-      if (e.target !== items[0]) {
-        for (let i = 0; i < items.length; i++) {
-          items[i].style.display = "none";
-        }
+projects.addEventListener("click", (e) => {
+  const items = projects.children;
+  //checks for project click
+  if (items[0].innerText === "Projects") {
+    //hides about boxes
+    if (e.target !== items[0]) {
+      bioBox.style.display = "none";
+      profileBox.style.display = "none";
+      projectBox.style.display = "block";
+      displayProject(e.target.innerText);
+    }
+    //hides project menu once project is selected
+    if (e.target !== items[0]) {
+      for (let i = 0; i < items.length; i++) {
+        items[i].style.display = "none";
       }
     }
-  });
-}
-
-//hide / show mobile menu with scroll
-
-let startWindow = 0;
-
-window.onscroll = () => {
-  const current = window.pageYOffset;
-  if (current > startWindow && current > 80) {
-    //down
-    header.style.top = "-800px";
-    startWindow = current;
-  } else {
-    header.style.top = "0";
-    startWindow = current;
   }
-};
+});
+
+/* ========
+
+  Projects
+  
+======== */
+
+function displayProject(text) {
+  let arr = [];
+  for (let i = 0; i < tech.length; i++) {
+    if (tech[i].name === text) {
+      arr.push(tech[i]);
+    }
+  }
+  for (let i = 0; i < music.length; i++) {
+    if (music[i].name === text) {
+      arr.push(music[i]);
+    }
+  }
+  let o = arr[0];
+  //write content
+  const title = projectBox.querySelector("h1");
+  const featurePicSpan = projectBox.querySelector("span");
+  const a = projectBox.querySelectorAll("a");
+  const liveA = a[0];
+  const ghA = a[1];
+  const desc = projectBox.querySelector("p");
+
+  title.innerText = o.name;
+  featurePicSpan.innerHTML = `<img src="${o.img}">`;
+  liveA.setAttribute("href", `${o.live}`);
+  ghA.setAttribute("href", `${o.github}`);
+  desc.innerText = o.description;
+}

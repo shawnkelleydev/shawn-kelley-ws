@@ -1,8 +1,8 @@
 :root {
   font-family: "Nunito", sans-serif;
   --darkBlue: rgb(2, 0, 34);
-  --blue: rgb(0, 13, 131);
-  --alt: rgb(0, 38, 255);
+  --blue: rgb(0, 10, 95);
+  --alt: rgb(0, 31, 209);
 }
 
 html {
@@ -25,6 +25,12 @@ html {
 
 ul {
   list-style: none;
+}
+
+h1 {
+  margin: 0;
+  padding: 20px;
+  text-align: center;
 }
 
 body,
@@ -53,7 +59,8 @@ header {
 
 .headspace,
 .projects li,
-nav {
+nav,
+button {
   height: 80px;
 }
 
@@ -116,12 +123,6 @@ p {
   font-size: 0.8em;
 }
 
-/* #headshot {
-  border-radius: 50%;
-  width: 95%;
-  margin-top: 10px;
-} */
-
 .socialbox {
   display: flex;
   flex-direction: row;
@@ -133,11 +134,18 @@ a {
   color: lightblue;
 }
 
+#project-btn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 5px;
+}
+
 button {
-  height: 60px;
   color: white;
-  background: var(--blue);
-  margin-bottom: 5px;
+  background: var(--alt);
+  width: 96%;
 }
 
 .social {
@@ -155,7 +163,6 @@ button {
   margin-left: 5px;
 }
 
-/* .project-selector-container {
-  position: fixed;
-  top: 80px;
-} */
+img {
+  margin-bottom: 20px;
+}
