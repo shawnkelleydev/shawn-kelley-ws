@@ -149,13 +149,9 @@ let startWindow = 0;
 
 window.onscroll = () => {
   const current = window.pageYOffset;
-  if (current > startWindow) {
+  if (current > startWindow && current > 80) {
     //down
     header.style.top = "-800px";
-    startWindow = current;
-  } else if (current <= 0) {
-    //up
-    header.style.top = "0";
     startWindow = current;
   } else {
     header.style.top = "0";
