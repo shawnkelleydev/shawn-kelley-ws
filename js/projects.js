@@ -10,12 +10,12 @@ const tech = [
   },
   {
     name: "Tomorrow Land",
-    img: "",
+    img: "img/tomorrow_land/edit.png",
     live: "https://shawnkelleyart.github.io/TomorrowLand/",
     github: "https://github.com/shawnkelleyart/TomorrowLand",
     description:
       "<p>Tomorrow Land is a simple, easy to use budgeting app.  It works great on mobile because it keeps input and balance fields where you can see them -- no scrolling required.</p><p>Tomorrow Land: Shape Tomorrow Today.</p>",
-    otherImg: "",
+    otherImg: ["img/tomorrow_land/full.png", "img/tomorrow_land/initial.png"],
   },
   {
     name: "Random Quotes",
