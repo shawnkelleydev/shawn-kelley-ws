@@ -190,6 +190,7 @@ function displayProject(text) {
   const a = projectBox.querySelectorAll("a");
   const liveA = a[0];
   const ghA = a[1];
+  const pieceA = a[2];
   const desc = projectBox.querySelector("#desc");
 
   title.innerText = o.name;
@@ -199,8 +200,8 @@ function displayProject(text) {
     featurePicSpan.innerHTML = ``;
   }
   if (o.live) {
-    liveA.setAttribute("href", `${o.live}`);
-    ghA.setAttribute("href", `${o.github}`);
+    liveA.setAttribute("href", o.live);
+    ghA.setAttribute("href", o.github);
     liveA.style.display = "block";
     ghA.style.display = "block";
   } else {
@@ -211,5 +212,11 @@ function displayProject(text) {
     desc.innerHTML = o.description;
   } else {
     desc.innerHTML = "";
+  }
+  if (o.link) {
+    pieceA.style.display = "block";
+    pieceA.setAttribute("href", o.link);
+  } else {
+    pieceA.style.display = "none";
   }
 }

@@ -71,6 +71,7 @@ const tech = [
 const music = [
   {
     name: "Urban Suite",
+    img: "img/pieces/us.jpg",
     instrumentation: "EETT",
     length: "apx. 12 minutes",
     challenge: "hard",
@@ -78,18 +79,18 @@ const music = [
   },
   {
     name: "An Off Day",
+    img: "img/pieces/anoffday.jpg",
     instrumentation: "EETT",
     length: "",
     challenge: "medium-hard",
     link: "https://www.cimarronmusic.com/anoffday",
-    img: "",
   },
   {
     name: "Home Suite Home",
+    img: "img/pieces/homesuitehome.jpg",
     instrumentation: "EETT",
     length: "",
     challenge: "medium-hard",
     link: "https://www.cimarronmusic.com/homesuitehome",
-    img: "",
   },
 ];
