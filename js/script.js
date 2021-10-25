@@ -16,10 +16,10 @@ const blue = "rgb(0, 13, 131)";
 
 ======*/
 
-function resetColors(ul, bgcolor, textcolor) {
+function resetColors(ul, textcolor) {
   const items = ul.children;
   for (let i = 0; i < items.length; i++) {
-    items[i].style.backgroundColor = bgcolor;
+    items[i].style.backgroundColor = "";
     items[i].style.color = textcolor;
   }
 }
@@ -32,10 +32,6 @@ function toggleBtn(li) {
     li.style.backgroundColor = "";
     li.style.color = "white";
   }
-}
-
-function switchTopCalc(element, newpx) {
-  element.style.top = `calc(100vh - ${newpx})`;
 }
 
 function toggleDisplay(element) {
@@ -52,14 +48,15 @@ function toggleDisplay(element) {
 
 ============*/
 
+const navheight = "300px";
+
 const navUL = document.querySelector("nav").children[0];
 const li = navUL.children;
 
 //callback for nav listener conditionals
 function writeProjectDisplay(navLI, projectsOb) {
-  resetColors(navUL, blue, "white");
+  resetColors(navUL, "white");
   toggleBtn(navLI);
-  switchTopCalc(projects, "300px");
   projects.innerHTML = `<li>Projects</li>`;
   projects.children[0].style.display = "flex";
   for (let i = 0; i < projectsOb.length; i++) {
@@ -75,14 +72,11 @@ toggleBtn(li[2]); //default = about
 function navigate(e) {
   if (e.target === li[0]) {
     writeProjectDisplay(li[0], tech);
-    footer.style.paddingBottom = "300px";
   } else if (e.target === li[1]) {
     writeProjectDisplay(li[1], music);
-    footer.style.paddingBottom = "300px";
   } else if (e.target === li[2]) {
-    resetColors(navUL, blue, "white");
+    resetColors(navUL, "white");
     toggleBtn(li[2]);
-    footer.style.paddingBottom = "200px";
     projects.innerHTML = ``;
     if (biobox.style.display === "none") {
       toggleDisplay(biobox);
@@ -111,15 +105,11 @@ function mobileProjectToggle(ul) {
       for (let i = 0; i < items.length; i++) {
         items[i].style.display = "flex";
       }
-      let height = items.length * 100;
-      height = height + 100 + "px";
-      switchTopCalc(ul, height);
       toggleBtn(showBtn);
     } else {
       for (let i = 1; i < items.length; i++) {
         items[i].style.display = "none";
       }
-      switchTopCalc(ul, "300px");
       toggleBtn(showBtn);
     }
   });
