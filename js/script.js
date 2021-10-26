@@ -82,7 +82,7 @@ function menuListenerCB(e) {
       />`;
     title.innerHTML = ``;
     //write bio
-    btns.innerHTML = `<br /><a href="mailto:shawnkelley7@gmail.com" class="btns"><button>Contact Me</button></a>`;
+    btns.innerHTML = `<a href="mailto:shawnkelley7@gmail.com" class="btns"><button>Contact Me</button></a>`;
     description.innerHTML = bio; //in bio.js
   }
 }
@@ -168,13 +168,15 @@ function getObject(e) {
 
 //set Banner
 function setBanner(o) {
-  banner.innerHTML = `
-  <img
-    class="banner"
-    src="${o.img}"
-    alt="banner picture of ${o.name}"
-  />
+  if (o.live) {
+    banner.innerHTML = `
+  <iframe src="${o.live}" height=600>
   `;
+  } else if (o.video) {
+    banner.innerHTML = o.video;
+  } else {
+    banner.innerHTML = `<img src="${o.img}" alt="${o.alt}">`;
+  }
 }
 
 //set title

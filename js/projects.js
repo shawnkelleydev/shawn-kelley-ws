@@ -67,7 +67,7 @@ const tech = [
     live: "https://shawnkelleyart.github.io/techdegree-project-5/",
     github: "https://github.com/shawnkelleyart/techdegree-project-5",
     description:
-      "<p>Phrase Hunter was an OOP coding challenge from Team Treehouse.  The game randomly selects a phrase and responds to user keyboard input.</p>",
+      "<p>Public API Requests was an api integration challenge from Team Treehouse.  This project features fetch api, modals with navigation, and search.</p>",
     otherImg: "img/project-5/full.png",
   },
 ];
@@ -79,7 +79,7 @@ const compositions = [
     title_img: "img/pieces/us.png",
     title_img_alt: "Urban Suite in scripted font",
     video:
-      '<iframe width="560" height="300" src="https://www.youtube.com/embed/videoseries?list=PL00ZKav_3htzX9Gj3mZIXVoHJda1q9h_5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      '<iframe width="auto" height="600" src="https://www.youtube.com/embed/videoseries?list=PL00ZKav_3htzX9Gj3mZIXVoHJda1q9h_5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
     description:
       "<p>Urban Suite was completed in 2008 while I was in college.  It was premiered at Eastman School of Music, used in the 2010 ITEA Quartet Competition, and was a finalist for the 2010 Harvey Phillips Award for Excellence in Composition.</p>",
     instrumentation: "EETT",
