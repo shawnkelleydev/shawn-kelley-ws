@@ -94,6 +94,8 @@ p,
 #music-menu {
   height: auto;
   display: none;
+  width: 80%;
+  align-self: center;
 }
 
 #dev-menu li,
@@ -216,8 +218,13 @@ iframe {
   height: 100%;
 }
 
+#menu li:first-child {
+  border-bottom-left-radius: 40px;
+}
+
 #menu li:last-child {
   background: var(--purple);
+  border-bottom-right-radius: 40px;
 }
 
 #description {
