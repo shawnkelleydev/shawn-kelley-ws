@@ -231,6 +231,14 @@ iframe {
   padding: 50px 0;
 }
 
+#dev-menu li:nth-child(even) {
+  background: rgb(161, 61, 61);
+}
+
+#music-menu li:nth-child(even) {
+  background: rgb(54, 102, 142);
+}
+
 /* =============
 
   HOVER/ACTIVE
