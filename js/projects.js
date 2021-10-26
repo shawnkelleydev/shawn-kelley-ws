@@ -72,9 +72,10 @@ const tech = [
   },
 ];
 
-const music = [
+const compositions = [
   {
     name: "Urban Suite",
+    img: "img/pieces/us_cover.jpeg",
     title_img: "img/pieces/us.png",
     title_img_alt: "Urban Suite in scripted font",
     video:
@@ -99,6 +100,7 @@ const music = [
   },
   {
     name: "Home Suite Home",
+    img: "img/pieces/hsh_cover.jpg",
     title_img: "img/pieces/hsh.png",
     title_img_alt: "Home Suite Home in scripted font",
     instrumentation: "EETT",

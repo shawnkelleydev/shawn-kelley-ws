@@ -5,166 +5,132 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shawn Kelley</title>
+    <!--my stylesheets-->
     <link rel="stylesheet" href="css/noramlize.css" />
     <link rel="stylesheet" href="css/style.css" />
     <!--google fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap"
       rel="stylesheet"
     />
-    <!--end google fonts-->
   </head>
   <body>
+    <!----------------------------------------->
     <header>
-      <div></div>
-      <nav>
-        <ul>
+      <!----------------------------------------->
+      <img
+        id="logo"
+        src="img/logos/meLogo_white.png"
+        alt="Shawn Kelley in scripted font"
+      />
+      <!----------------------------------------->
+    </header>
+    <!----------------------------------------->
+    <div id="container">
+      <!----------------------------------------->
+      <div id="profile">
+        <img
+          src="img/pics/square_headshot.png"
+          alt="Headshot of Shawn Kelley"
+          id="headshot"
+        />
+        <!----------------------------------------->
+        <p>Shawn Kelley is a composer who codes.</p>
+        <!----------------------------------------->
+        <p>He's studying to be a Full-Stack JavaScript Developer.</p>
+        <!----------------------------------------->
+        <div id="social-box">
+          <img
+            src="img/social/linkedin_icon.png"
+            alt="LinkedIn icon"
+            class="social"
+          />
+          <img src="img/social/github.png" alt="GitHub icon" class="social" />
+        </div>
+        <!----------------------------------------->
+      </div>
+      <!----------------------------------------->
+      <div id="banner">
+        <img
+          class="banner"
+          src="img/pics/family_medium.jpg"
+          alt="Kelley family on a log over a stream in a meadow"
+        />
+      </div>
+      <!----------------------------------------->
+      <div id="content">
+        <!----------------------------------------->
+        <ul id="menu">
           <li>Dev</li>
           <li>Music</li>
           <li>About</li>
         </ul>
-      </nav>
-      <div class="project-selector-container">
-        <ul id="projects" class="projects"></ul>
-      </div>
-    </header>
-
-    <div class="headspace"></div>
-
-    <div id="content">
-      <div id="banner-div">
-        <img
-          id="family-banner"
-          src="img/pics/family_medium.jpg"
-          alt="The Kelley family, sitting on a log over a stream in a wheat-hued meadow."
-        />
-        <!-- <img
-          src="img/pics/devmusban.jpg"
-          alt="JavaScript black and white"
-          id="alt-banner"
-        /> -->
-      </div>
-      <div class="profile-box">
-        <!--profile div / hidden in mobile-->
-        <img
-          src="img/pics/square_headshot.png"
-          alt="headshot of Shawn Kelley"
-          id="headshot"
-        />
-        <img
-          src="img/logos/meLogo_white.png"
-          alt="Shawn Kelley in scripted font"
-        />
-        <h4>Full-Stack Web Developer</h4>
-        <div class="socialbox">
-          <a target="_blank" href="https://www.linkedin.com/in/shawnkelleyart/"
-            ><img
-              src="img/social/linkedin_icon.png"
-              alt="LinkedIn Icon"
-              class="social"
-          /></a>
-          <a target="_blank" href="https://github.com/shawnkelleyart/"
-            ><img src="img/social/github.png" alt="GitHub Icon" class="social"
-          /></a>
-        </div>
-        <br />
-        <h2>Skills</h2>
-        <br />
-        <ul>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-          <li>OOP</li>
-          <li>NodeJS</li>
-          <li>Express</li>
-          <li>Pug</li>
-          <li>Git / Github</li>
-          <li>Visual Studio Code</li>
-          <li>Soft Skills</li>
-        </ul>
-        <br />
-        <br />
-      </div>
-      <div class="bio-box">
-        <img
-          id="family-pic-phone"
-          src="img/pics/family_small.jpg"
-          alt="Picture of Shawn with his wife, Whitney, and two daughters on a log over a stream in a meadow."
-        />
-        <p>
-          Shawn fell in love with web development in mid-2021, and he is
-          currently completing the "Full Stack JavaScript Techdegree" program at
-          Team Treehouse, a coding education platform.
-        </p>
-        <p>
-          Shawn's background is in music composition, performance, and
-          education. As a teacher, he has worked with thousands of children and
-          led over 20,000 classes over a 17-year period.
-        </p>
-        <p>
-          Shawn's musical compositions have received wide regard, having been
-          performed and recorded in the United States, Europe, and Japan.
-        </p>
-        <a
-          target="_blank"
-          href="https://open.spotify.com/album/4L6mJLsd5JhO3VD7pNVJZf"
-          ><img
-            src="img/pieces/funkaru.jpeg"
-            id="funkaru"
-            alt="Funkaru cd cover"
-        /></a>
-        <figcaption>Funkaru recording of <em>Urban Suite</em></figcaption>
-        <p>
-          As a performer, Shawn has appeared with GRAMMY® award winners Charlie
-          Daniels, Kenny Rogers, and Doc Severinsen, and he was seen on
-          international television as part of President George W. Bush's second
-          innaugration parade.
-        </p>
-        <p>
-          Shawn lives near Denver with his wife, Whitney Kelley, and two
-          daughters. He graduated <em>summa cum laude</em> with a Bachelor of
-          Music in Music Education from the University of Tennessee, Knoxville,
-          in 2008.
-        </p>
-      </div>
-
-      <div class="project-container">
-        <div id="ipad-projects-container">
-          <ul id="ipad-projects"></ul>
-        </div>
-
-        <div id="project-display-container">
-          <div class="feature-container">
-            <!--feature pic-->
-            <span></span>
-            <span></span>
-          </div>
-
-          <div id="project-btn-container">
-            <a target="_blank" href=""
-              ><button class="project-btn">live site</button></a
-            >
-            <a target="_blank" href=""
-              ><button class="project-btn">github</button></a
-            >
-            <a target="_blank" href=""
-              ><button class="project-btn">purchase</button></a
-            >
-          </div>
-          <div class="project-description-container">
+        <!----------------------------------------->
+        <ul id="dev-menu"></ul>
+        <!----------------------------------------->
+        <ul id="music-menu"></ul>
+        <!----------------------------------------->
+        <div id="about">
+          <!----------------------------------------->
+          <div id="title"></div>
+          <!----------------------------------------->
+          <div id="btns">
             <br />
-            <span id="desc"></span>
+            <a href="mailto:shawnkelley7@gmail.com" class="btns"
+              ><button>Contact Me</button></a
+            >
           </div>
+          <!----------------------------------------->
+          <div id="description">
+            <p>
+              Shawn Kelley fell in love with web development in mid-2021, and he
+              is currently completing an immersive Full-Stack JavaScript
+              Developer program with Team Treehouse, a coding education
+              platform.
+            </p>
+            <p>
+              Shawn's background is in music education, performance, and
+              composition.
+            </p>
+            <p>
+              As a teacher, Shawn has worked with thousands of children and led
+              over 20,000 classes in a 17-year period.
+            </p>
+            <p>
+              Shawn's original works have received international recognition.
+              His first piece, <em>Urban Suite</em>, has been recorded,
+              performed, and featured accross the world.
+            </p>
+            <p>
+              Shawn has appeared with GRAMMY®-award winners Doc Severinsen,
+              Charlie Daniels, and Kenny Rogers. He was also seen on
+              international television when he performed in President Bush's
+              second innauguration parade.
+            </p>
+            <p>
+              Shawn is a perpetual learner and loves to read non-fiction. He
+              lives near Denver with his wife, Whitney Kelley, and two
+              daughters.
+            </p>
+          </div>
+          <!----------------------------------------->
+          <div id="media"></div>
+          <!----------------------------------------->
         </div>
+        <!----------------------------------------->
       </div>
+      <!----------------------------------------->
     </div>
+    <!----------------------------------------->
     <footer>
-      <p>Copyright © 2021 Shawn Kelley.<br />All rights reserved.</p>
+      <p>All rights reserved.</p>
+      <p>Copyright © 2021 Shawn Kelley.</p>
     </footer>
+    <!----------------------------------------->
+    <script src="js/bio.js"></script>
     <script src="js/projects.js"></script>
-    <script src="js/about.js"></script>
-    <script src="js/mobile.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
