@@ -171,6 +171,7 @@ iframe {
 .social {
   width: 50px;
   border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 .social:last-child {
@@ -239,6 +240,11 @@ iframe {
   background: rgb(54, 102, 142);
 }
 
+#skills li {
+  text-align: center;
+  cursor: default;
+}
+
 /* =============
 
   HOVER/ACTIVE
@@ -248,7 +254,8 @@ iframe {
 button:hover,
 button:active,
 #menu li:hover,
-li:hover {
+#dev-menu li:hover,
+#music-menu li:hover {
   background: white;
   color: black;
   border: none;
@@ -264,7 +271,7 @@ li:hover {
   
 ======== */
 
-@media (min-width: 1000px) {
+@media (min-width: 750px) {
   /* ======================
 
     CONTAINER RESTRUCTURE
@@ -275,8 +282,8 @@ li:hover {
     grid-template-columns: 250px auto;
     grid-template-rows: auto auto;
     align-content: flex-start;
-    font-size: 0.7rem;
-    max-width: 1200px;
+    font-size: 0.9rem;
+    max-width: 1100px;
   }
 
   #profile {
