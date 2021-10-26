@@ -221,7 +221,7 @@ button:hover,
 button:active,
 #menu li:hover,
 li:hover {
-  background: rgb(255, 243, 22);
+  background: white;
   color: black;
   border: none;
 }
@@ -233,6 +233,11 @@ li:hover {
 ======== */
 
 @media (min-width: 750px) {
+  /* ======================
+
+    CONTAINER RESTRUCTURE
+  
+  ====================== */
   #container {
     display: grid;
     grid-template-columns: 250px auto;
@@ -260,5 +265,39 @@ li:hover {
   #content {
     grid-column: 2/3;
     grid-row: 2/3;
+  }
+
+  /* ===================
+
+    ABOUT RESTRUCTURE
+  
+  =================== */
+
+  #about {
+    display: grid;
+    grid-template-columns: auto 250px;
+    grid-template-rows: auto auto 14vh;
+  }
+
+  #title {
+    grid-column: 1/3;
+    grid-row: 1/2;
+  }
+
+  #btns {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+
+  #description {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    padding: 0 10px;
+    justify-content: flex-start;
+  }
+
+  #media {
+    grid-column: 1/3;
+    grid-row: 3/4;
   }
 }
