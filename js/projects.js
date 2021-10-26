@@ -77,7 +77,10 @@ const music = [
     name: "Urban Suite",
     title_img: "img/pieces/us.png",
     title_img_alt: "Urban Suite in scripted font",
-    img: "img/pieces/us_cover.jpeg",
+    video:
+      '<iframe width="560" height="300" src="https://www.youtube.com/embed/videoseries?list=PL00ZKav_3htzX9Gj3mZIXVoHJda1q9h_5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    description:
+      "<p>Urban Suite was completed in 2008 while I was in college.  It was premiered at Eastman School of Music, used in the 2010 ITEA Quartet Competition, and was a finalist for the 2010 Harvey Phillips Award for Excellence in Composition.</p>",
     instrumentation: "EETT",
     length: "apx. 12 minutes",
     challenge: "hard",
@@ -91,14 +94,17 @@ const music = [
     instrumentation: "EETT",
     challenge: "medium-hard",
     link: "https://www.cimarronmusic.com/anoffday",
+    description:
+      "<p>An off day was composed in 2020 and, along with several other recent compositions, reflects my desire to continue contributing to the tuba quartet repertoire.  This piece is fun and challenging.</p>",
   },
   {
     name: "Home Suite Home",
-    img: "img/pieces/hsh_cover.jpg",
     title_img: "img/pieces/hsh.png",
     title_img_alt: "Home Suite Home in scripted font",
     instrumentation: "EETT",
     challenge: "medium-hard",
     link: "https://www.cimarronmusic.com/homesuitehome",
+    description:
+      "<p>Home Suite Home consolidated some of my favorite themes at the time.  It was composed in 2020 and, along with several other recent compositions, reflects my desire to continue contributing to the tuba quartet repertoire.</p>",
   },
 ];

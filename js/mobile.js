@@ -5,11 +5,13 @@
 =============*/
 
 const projects = document.getElementById("projects");
+const ipadProjects = document.getElementById("ipad-projects");
 const header = document.querySelector("header");
 const headspace = document.querySelector(".headspace");
 const projectSelectorDiv = document.querySelector(
   ".project-selector-container"
 );
+const ipadProjectMenuDiv = document.querySelector("#ipad-projects-container");
 const footer = document.querySelector("footer");
 const bioBox = document.querySelector(".bio-box");
 const profileBox = document.querySelector(".profile-box");
@@ -40,11 +42,27 @@ function toggleBtn(li) {
   }
 }
 
-function toggleDisplay(element) {
-  if (element.style.display !== "none") {
-    element.style.display = "none";
-  } else {
-    element.style.display = "";
+function hideElement(element) {
+  element.style.display = "none";
+}
+
+function displayFlex(element) {
+  element.style.display = "flex";
+}
+
+function displayBlock(element) {
+  element.style.display = "block";
+}
+
+function hideChildren(parent, startingIndex) {
+  for (let i = startingIndex; i < parent.children.length; i++) {
+    parent.children[i].style.display = "none";
+  }
+}
+
+function showChildren(parent, startingIndex) {
+  for (let i = startingIndex; i < parent.children.length; i++) {
+    parent.children[i].style.display = "block";
   }
 }
 
@@ -54,7 +72,7 @@ function toggleDisplay(element) {
 
 ======*/
 
-//hide / show mobile menu with scroll
+//hide / show menu with scroll
 let startWindow = 0;
 
 window.onscroll = () => {
@@ -74,41 +92,82 @@ window.onscroll = () => {
 const navUL = document.querySelector("nav").children[0];
 const li = navUL.children;
 
+//writes project menu lists / cb in writeProjectMenu()
+function projectListWriter(ul, ob) {
+  ul.innerHTML = `<li>Projects</li>`;
+  ul.children[0].style.display = "flex";
+  for (let i = 0; i < ob.length; i++) {
+    ul.insertAdjacentHTML("beforeend", `<li>${ob[i].name}</li>`);
+  }
+  mobileProjectToggle(ul);
+}
+
+//show ipad menu
+
 //callback for nav listener conditionals
-function writeProjectDisplay(navLI, projectsOb) {
+function writeProjectMenu(navLI, projectsOb) {
+  ipadProjects.innerHTML = ``;
+  projects.innerHTML = ``;
   resetColors(navUL, "white");
   toggleBtn(navLI);
-  projects.innerHTML = `<li>Projects</li>`;
-  projects.children[0].style.display = "flex";
-  for (let i = 0; i < projectsOb.length; i++) {
-    projects.insertAdjacentHTML("beforeend", `<li>${projectsOb[i].name}</li>`);
+  if (window.innerWidth < 750) {
+    projectListWriter(projects, projectsOb);
+  } else {
+    projectListWriter(ipadProjects, projectsOb);
+    ipadProjectMenuDiv.style.display = "flex";
   }
-  mobileProjectToggle(projects);
 }
 
 toggleBtn(li[2]); //default = about
 
+//display projects
+function showProjectBox() {
+  hideElement(bioBox);
+  displayFlex(projectBox);
+  if (window.innerWidth < 750) {
+    hideElement(profileBox);
+  } else {
+    displayFlex(profileBox);
+  }
+}
+
+//hide projects / display bio
+function displayBio(aboutBtn) {
+  resetColors(navUL, "white");
+  toggleBtn(aboutBtn);
+  hideElement(projectBox);
+  projects.innerHTML = ``;
+  if (bioBox.style.display === "none") {
+    displayFlex(bioBox);
+    displayFlex(profileBox);
+  }
+}
+
+const famban = document.querySelector("#family-banner");
+const altban = document.querySelector("#alt-banner");
+
 //nav listener cb
 function navigate(e) {
-  if (e.target === li[0]) {
-    writeProjectDisplay(li[0], tech);
-    if (
-      projectBox.style.display === "none" ||
-      projectBox.style.display === ""
-    ) {
-      toggleDisplay(projectBox);
+  const dev = li[0];
+  const mus = li[1];
+  const about = li[2];
+  //dev
+  if (e.target === dev) {
+    writeProjectMenu(dev, tech);
+    if (window.innerWidth > 750) {
+      showProjectBox();
+      hideChildren(projectBox, 1);
     }
-  } else if (e.target === li[1]) {
-    writeProjectDisplay(li[1], music);
-  } else if (e.target === li[2]) {
-    resetColors(navUL, "white");
-    toggleBtn(li[2]);
-    projectBox.style.display = "none";
-    projects.innerHTML = ``;
-    if (bioBox.style.display === "none") {
-      toggleDisplay(bioBox);
-      toggleDisplay(profileBox);
+    //music
+  } else if (e.target === mus) {
+    writeProjectMenu(mus, music);
+    if (window.innerWidth > 750) {
+      showProjectBox();
+      hideChildren(projectBox, 1);
     }
+    //about
+  } else if (e.target === about) {
+    displayBio(about);
   }
 }
 
@@ -128,48 +187,56 @@ navUL.addEventListener("click", (e) => {
 function mobileProjectToggle(ul) {
   const items = ul.children;
   const showBtn = items[0];
+  for (let i = 1; i < items.length; i++) {
+    items[i].style.display = "none";
+  }
   showBtn.addEventListener("click", (e) => {
     if (items[1].style.display === "none" || items[1].style.display === "") {
       for (let i = 0; i < items.length; i++) {
         items[i].style.display = "flex";
       }
-      toggleBtn(showBtn);
     } else {
       for (let i = 1; i < items.length; i++) {
         items[i].style.display = "none";
       }
-      toggleBtn(showBtn);
     }
   });
 }
 
 //  PROJECT UL LISTENER / PAGE WRITER -- CB in navUL listener
 
-projects.addEventListener("click", (e) => {
-  const items = projects.children;
-  //checks for project click
-  if (items[0].innerText === "Projects") {
-    //hides about boxes
-    if (e.target !== items[0]) {
-      bioBox.style.display = "none";
-      profileBox.style.display = "none";
-      projectBox.style.display = "block";
-      displayProject(e.target.innerText);
+function projectsCB(e, ul) {
+  let items = ul.children;
+  //hides about boxes
+  if (e.target !== items[0]) {
+    hideElement(bioBox);
+    if (window.innerWidth < 750) {
+      hideElement(profileBox);
     }
-    //hides project menu once project is selected
-    if (e.target !== items[0]) {
-      for (let i = 0; i < items.length; i++) {
-        items[i].style.display = "none";
-      }
+    displayFlex(projectBox);
+    showChildren(projectBox, 1);
+    displayProject(e.target.innerText);
+  }
+  //hides project menu once project is selected on phones
+  if (e.target !== items[0] && ul === projects) {
+    for (let i = 0; i < items.length; i++) {
+      items[i].style.display = "none";
+    }
+  } else if (e.target !== items[0]) {
+    for (let i = 1; i < items.length; i++) {
+      items[i].style.display = "none";
     }
   }
-});
+}
 
-/* ========
+projects.addEventListener("click", (e) => projectsCB(e, projects));
+ipadProjects.addEventListener("click", (e) => projectsCB(e, ipadProjects));
 
-  Projects
+/* =========
+
+  PROJECTS
   
-======== */
+========== */
 
 function displayProject(text) {
   let arr = [];
@@ -192,18 +259,21 @@ function displayProject(text) {
   const ghA = a[1];
   const pieceA = a[2];
   const desc = projectBox.querySelector("#desc");
-
+  //title
   if (o.title_img) {
     title.innerHTML = `<img src="${o.title_img}" alt="${o.title_img_alt}" class="title_img">`;
   } else {
     title.innerHTML = `<h1>${o.name}</h1>`;
   }
-
+  //image or video
   if (o.img) {
     featurePicSpan.innerHTML = `<img src="${o.img}">`;
+  } else if (o.video) {
+    featurePicSpan.innerHTML = o.video;
   } else {
     featurePicSpan.innerHTML = ``;
   }
+  //live site / github buttons
   if (o.live) {
     liveA.setAttribute("href", o.live);
     ghA.setAttribute("href", o.github);
@@ -213,11 +283,13 @@ function displayProject(text) {
     liveA.style.display = "none";
     ghA.style.display = "none";
   }
+  //description
   if (o.description) {
     desc.innerHTML = o.description;
   } else {
     desc.innerHTML = "";
   }
+  //buy link
   if (o.link) {
     pieceA.style.display = "block";
     pieceA.setAttribute("href", o.link);

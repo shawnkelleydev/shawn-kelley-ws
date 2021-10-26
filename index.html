@@ -18,6 +18,7 @@
   </head>
   <body>
     <header>
+      <div></div>
       <nav>
         <ul>
           <li>Dev</li>
@@ -33,6 +34,18 @@
     <div class="headspace"></div>
 
     <div id="content">
+      <div id="banner-div">
+        <img
+          id="family-banner"
+          src="img/pics/family_medium.jpg"
+          alt="The Kelley family, sitting on a log over a stream in a wheat-hued meadow."
+        />
+        <!-- <img
+          src="img/pics/devmusban.jpg"
+          alt="JavaScript black and white"
+          id="alt-banner"
+        /> -->
+      </div>
       <div class="profile-box">
         <!--profile div / hidden in mobile-->
         <img
@@ -76,6 +89,7 @@
       </div>
       <div class="bio-box">
         <img
+          id="family-pic-phone"
           src="img/pics/family_small.jpg"
           alt="Picture of Shawn with his wife, Whitney, and two daughters on a log over a stream in a meadow."
         />
@@ -96,8 +110,12 @@
         <a
           target="_blank"
           href="https://open.spotify.com/album/4L6mJLsd5JhO3VD7pNVJZf"
-          ><img src="img/pieces/funkaru.jpeg" alt="Funkaru cd cover"
+          ><img
+            src="img/pieces/funkaru.jpeg"
+            id="funkaru"
+            alt="Funkaru cd cover"
         /></a>
+        <figcaption>Funkaru recording of <em>Urban Suite</em></figcaption>
         <p>
           As a performer, Shawn has appeared with GRAMMY® award winners Charlie
           Daniels, Kenny Rogers, and Doc Severinsen, and he was seen on
@@ -113,25 +131,30 @@
       </div>
 
       <div class="project-container">
-        <div class="feature-container">
-          <!--feature pic-->
-          <span></span>
-          <span></span>
+        <div id="ipad-projects-container">
+          <ul id="ipad-projects"></ul>
         </div>
-        <div id="project-btn-container">
-          <a target="_blank" href=""
-            ><button class="project-btn">live site</button></a
-          >
-          <a target="_blank" href=""
-            ><button class="project-btn">github</button></a
-          >
-          <a target="_blank" href=""
-            ><button class="project-btn">purchase</button></a
-          >
-        </div>
-        <div class="project-description-container">
-          <br />
-          <span id="desc"></span>
+        <div id="project-display-container">
+          <div class="feature-container">
+            <!--feature pic-->
+            <span></span>
+            <span></span>
+          </div>
+          <div id="project-btn-container">
+            <a target="_blank" href=""
+              ><button class="project-btn">live site</button></a
+            >
+            <a target="_blank" href=""
+              ><button class="project-btn">github</button></a
+            >
+            <a target="_blank" href=""
+              ><button class="project-btn">purchase</button></a
+            >
+          </div>
+          <div class="project-description-container">
+            <br />
+            <span id="desc"></span>
+          </div>
         </div>
       </div>
     </div>

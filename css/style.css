@@ -64,6 +64,7 @@ header {
 
 .headspace,
 .projects li,
+#ipad-projects li,
 nav,
 button {
   height: 80px;
@@ -91,16 +92,35 @@ header {
   border-radius: 0 0 20px 20px;
 }
 
-.projects {
+.projects,
+#ipad-projects-container {
   display: flex;
   flex-direction: column;
   background-color: var(--alt);
 }
 
-.projects li {
+.projects li,
+#ipad-projects li {
   display: none;
   align-items: center;
   justify-content: center;
+}
+
+nav li,
+.projects li,
+#ipad-projects li,
+button {
+  cursor: pointer;
+}
+
+.projects li:nth-child(even),
+#ipad-projects li:nth-child(even) {
+  background-color: rgb(0, 0, 190);
+}
+
+.projects li:last-child,
+#ipad-projects li:last-child {
+  border-radius: 0 0 40px 40px;
 }
 
 .project-container {
@@ -156,7 +176,8 @@ a {
 button {
   color: white;
   background: var(--alt);
-  /* width: 96%; */
+  width: 95%;
+  margin-bottom: 5px;
 }
 
 .social {
@@ -177,4 +198,179 @@ button {
 .title_img {
   margin: 50px 0 30px 0;
   width: 90%;
+}
+
+#family-banner {
+  display: none;
+}
+
+#funkaru {
+  padding: 20px;
+}
+
+figcaption {
+  font-size: 0.7em;
+}
+
+#ipad-projects-container {
+  display: none;
+  border-radius: 40px;
+}
+
+#dev-banner {
+  display: none;
+}
+
+#mus-banner {
+  display: none;
+}
+
+iframe {
+  border-radius: 40px;
+}
+
+/* ipad and bigger */
+@media (min-width: 750px) {
+  header {
+    flex-direction: row;
+  }
+
+  header {
+    background: none;
+  }
+
+  .headspace {
+    display: none;
+  }
+
+  header > div:first-child {
+    display: block;
+    width: 100%;
+  }
+
+  nav li:first-child {
+    border-bottom-left-radius: 40px;
+  }
+
+  nav li {
+    width: 150px;
+  }
+
+  nav ul {
+    justify-content: end;
+    width: calc(180px * 3);
+  }
+
+  .project-selector-container {
+    display: none;
+  }
+
+  #content {
+    display: grid;
+    grid-template-columns: auto 300px;
+    grid-template-rows: auto auto;
+    align-items: flex-start;
+  }
+
+  #banner-div {
+    grid-column: 1/3;
+    grid-row: 1/2;
+  }
+
+  #family-banner {
+    display: block;
+  }
+
+  #family-pic-phone {
+    display: none;
+  }
+
+  #headshot {
+    width: 250px;
+    border-radius: 50%;
+  }
+
+  .profile-box {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    background-color: rgb(34, 34, 34);
+    border-bottom-left-radius: 40px;
+  }
+
+  .bio-box,
+  .project-container {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  .bio-box,
+  .profile-box,
+  .project-container {
+    padding: 20px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1000px) {
+  #content {
+    grid-template-columns: 280px auto;
+    max-width: 1200px;
+  }
+
+  .profile-box {
+    grid-column: 1/2;
+    grid-row: 1/3;
+    border-radius: 40px 0 0 40px;
+    height: 100%;
+  }
+
+  #banner-div {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+
+  #family-banner {
+    border-radius: 0 40px 40px 0;
+  }
+
+  .bio-box,
+  .project-container {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+
+  .project-container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    padding: 0;
+  }
+
+  #project-display-container {
+    padding: 0 20px;
+  }
+
+  #ipad-projects-container {
+    width: 333px;
+    border-radius: 0;
+    margin: 20px 0;
+    background: none;
+  }
+
+  #ipad-projects li:first-child {
+    display: none;
+  }
+
+  #ipad-projects li {
+    display: block;
+    margin: 10px 0;
+    background: var(--alt);
+  }
+
+  #ipad-projects li:last-child {
+    border-radius: 0;
+  }
 }
