@@ -59,7 +59,7 @@ const tech = [
     github: "https://github.com/shawnkelleyart/techdegree-project-4",
     description:
       "<p>Phrase Hunter was an OOP coding challenge from Team Treehouse.  The game randomly selects a phrase and responds to user keyboard input.</p>",
-    media: ["img/project-4/full.png", "img/project-4/title.png"],
+    media: ["img/project-4/action.png"],
   },
   {
     name: "Public API Requests",
@@ -68,7 +68,7 @@ const tech = [
     github: "https://github.com/shawnkelleyart/techdegree-project-5",
     description:
       "<p>Public API Requests was an api integration challenge from Team Treehouse.  This project features fetch api, modals with navigation, and search.</p>",
-    media: ["img/project-5/full.png, img/project-5/search.png"],
+    media: ["img/project-5/full.png", "img/project-5/search.png"],
   },
 ];
 
