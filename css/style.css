@@ -171,7 +171,6 @@ iframe {
 .social {
   width: 50px;
   border-radius: 10px;
-  margin-bottom: 20px;
 }
 
 .social:last-child {
@@ -295,6 +294,8 @@ button:active,
 
   #headshot {
     border-radius: 50%;
+    width: 200px;
+    align-self: center;
   }
 
   #banner {
