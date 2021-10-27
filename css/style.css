@@ -19,6 +19,7 @@ html {
   margin: 0;
   padding: 0;
   width: 100%;
+  transition: all 0.3s ease;
 }
 
 :root {
@@ -145,7 +146,6 @@ button {
   border: 1px white solid;
   margin-bottom: 5px;
   color: white;
-  transition: background 0.3s ease;
 }
 
 footer {
@@ -241,7 +241,7 @@ iframe {
 
 #skills li {
   text-align: center;
-  cursor: default;
+  cursor: text;
 }
 
 /* =============
@@ -257,6 +257,14 @@ button:active,
 #music-menu li:hover {
   background: white;
   color: black;
+}
+
+button:hover,
+button:active,
+#menu li:hover,
+#dev-menu li:hover,
+#music-menu li:hover,
+iframe {
   border: none;
 }
 
