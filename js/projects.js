@@ -8,7 +8,7 @@ const tech = [
     github: "https://github.com/shawnkelleyart/FirstLight",
     description:
       "<p>This app is intended to give Christians their first light of the day.</p><p>It's simple, easy to edit, and saves locally in the browser.</p><p>First Light. Find your way for the day.",
-    otherImg: "img/first_light/notes.png",
+    media: ["img/first_light/basic.png", "img/first_light/notes.png"],
   },
   {
     name: "Tomorrow Land",
@@ -19,7 +19,7 @@ const tech = [
     github: "https://github.com/shawnkelleyart/TomorrowLand",
     description:
       "<p>Tomorrow Land is a simple, easy to use budgeting app.  It works great on mobile because it keeps input and balance fields where you can see them -- no scrolling required.</p><p>Tomorrow Land: Shape Tomorrow Today.</p>",
-    otherImg: ["img/tomorrow_land/full.png", "img/tomorrow_land/initial.png"],
+    media: ["img/tomorrow_land/full.png", "img/tomorrow_land/edit.png"],
   },
   {
     name: "Random Quotes",
@@ -28,7 +28,7 @@ const tech = [
     github: "https://github.com/shawnkelleyart/techdegree-project-1",
     description:
       "<p>Random Quotes was a coding challenge from Team Treehouse.  The page generates a new quote and randomly-generated color using asynchronous JavaScript.</p>",
-    otherImg: [
+    media: [
       "img/project-1/purple_einstein.png",
       "img/project-1/purple_lincoln.png",
       "img/project-1/red_king.png",
@@ -41,7 +41,7 @@ const tech = [
     github: "https://github.com/shawnkelleyart/techdegree-project-2",
     description:
       "<p>Student List Pagination was a coding challenge from Team Treehouse.  The page sorts a list of 42 students into pages of 12 and includes search functionality.</p>",
-    otherImg: ["img/project-2/full.png"],
+    media: ["img/project-2/full.png", "img/project-2/search.png"],
   },
   {
     name: "Responsive Form",
@@ -50,7 +50,7 @@ const tech = [
     github: "https://github.com/shawnkelleyart/techdegree-project-3",
     description:
       "<p>Responsive Form was an HTML Form / RegEx coding challenge from Team Treehouse.  I contributed live RegEx validation, total calculation, and schedule conflict prevention via JavaScript.</p>",
-    otherImg: ["img/project-3/activities.png", "img/project-3/cc.png"],
+    media: ["img/project-3/activities.png", "img/project-3/cc.png"],
   },
   {
     name: "Phrase Hunter",
@@ -59,7 +59,7 @@ const tech = [
     github: "https://github.com/shawnkelleyart/techdegree-project-4",
     description:
       "<p>Phrase Hunter was an OOP coding challenge from Team Treehouse.  The game randomly selects a phrase and responds to user keyboard input.</p>",
-    otherImg: ["img/project-4/full.png", "img/project-4/title.png"],
+    media: ["img/project-4/full.png", "img/project-4/title.png"],
   },
   {
     name: "Public API Requests",
@@ -68,7 +68,7 @@ const tech = [
     github: "https://github.com/shawnkelleyart/techdegree-project-5",
     description:
       "<p>Public API Requests was an api integration challenge from Team Treehouse.  This project features fetch api, modals with navigation, and search.</p>",
-    otherImg: "img/project-5/full.png",
+    media: ["img/project-5/full.png, img/project-5/search.png"],
   },
 ];
 

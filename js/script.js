@@ -146,6 +146,7 @@ function contentCB(e) {
   setTitle(o);
   writeButtons(targetClass, o);
   writeDesc(o);
+  writeMedia(o);
   //----------------------------------------
 }
 
@@ -218,4 +219,19 @@ function writeButtons(targetClass, o) {
 //writes description
 function writeDesc(o) {
   description.innerHTML = o.description;
+}
+
+function writeMedia(o) {
+  const media = document.querySelector("#media");
+  //clear previous content
+  media.innerHTML = ``;
+  if (o.media) {
+    console.log(o.media.length);
+    for (let i = 0; i < o.media.length; i++) {
+      media.insertAdjacentHTML(
+        "beforeend",
+        `<img src="${o.media[i]}" class="media">`
+      );
+    }
+  }
 }

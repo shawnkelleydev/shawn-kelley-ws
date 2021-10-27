@@ -182,6 +182,12 @@ iframe {
   max-width: 400px;
 }
 
+.media {
+  margin-bottom: 20px;
+  align-self: center;
+  max-width: 300px;
+}
+
 /* ======
 
   IDs
@@ -325,7 +331,7 @@ iframe {
   #about {
     display: grid;
     grid-template-columns: auto 250px;
-    grid-template-rows: auto auto 14vh;
+    grid-template-rows: auto auto auto;
   }
 
   #title {
@@ -346,7 +352,15 @@ iframe {
   }
 
   #media {
+    margin-top: 40px;
     grid-column: 1/3;
     grid-row: 3/4;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .media {
+    align-self: flex-start;
   }
 }
