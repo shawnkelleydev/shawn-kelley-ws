@@ -4,6 +4,7 @@
 
 ============================================ */
 
+const body = document.querySelector("body");
 //divs
 const banner = document.querySelector("#banner");
 const about = document.querySelector("#about");
@@ -109,7 +110,7 @@ for (let i = 0; i < tech.length; i++) {
 for (let i = 0; i < compositions.length; i++) {
   musicMenu.insertAdjacentHTML(
     "beforeend",
-    `<li class>${compositions[i].name}</li>`
+    `<li class="music">${compositions[i].name}</li>`
   );
 }
 
@@ -130,27 +131,41 @@ musicMenu.addEventListener("click", (e) => contentCB(e));
 
 //CB
 function contentCB(e) {
-  //readability
-  const targetClass = e.target.className;
-  //----------------------------------------
-  //clear divs
-  btns.innerHTML = ``;
-  description.innerHTML = ``;
-  //----------------------------------------
-  //hide menus
-  hide(devMenu);
-  hide(musicMenu);
-  //----------------------------------------
-  //get object from library
-  const o = getObject(e);
-  //use o to write
-  setBanner(o);
-  setTitle(o);
-  writeButtons(targetClass, o);
-  writeDesc(o);
-  writeMedia(o);
-  //----------------------------------------
+  if (
+    (e.target !== devMenu &&
+      e.target !== musicMenu &&
+      e.target.className === "tech") ||
+    e.target.className === "music"
+  ) {
+    //readability
+    const targetClass = e.target.className;
+    //clear divs
+    btns.innerHTML = ``;
+    description.innerHTML = ``;
+    //hide menus
+    hide(devMenu);
+    hide(musicMenu);
+    //get object from library
+    const o = getObject(e);
+    //use o to write
+    setBanner(o);
+    setTitle(o);
+    writeButtons(targetClass, o);
+    writeDesc(o);
+    writeMedia(o);
+  }
 }
+
+body.addEventListener("click", (e) => {
+  if (
+    e.target.className !== "tech" &&
+    e.target.className !== "music" &&
+    e.target.parentElement.getAttribute("id") !== "menu"
+  ) {
+    hide(devMenu);
+    hide(musicMenu);
+  }
+});
 
 //gets object from library
 function getObject(e) {
@@ -173,8 +188,8 @@ function getObject(e) {
 function setBanner(o) {
   if (o.live) {
     banner.innerHTML = `
-  <iframe src="${o.live}" height=600>
-  `;
+    <iframe src="${o.live}" height=600>
+    `;
   } else if (o.video) {
     banner.innerHTML = o.video;
   } else {
@@ -210,11 +225,15 @@ function writeButtons(targetClass, o) {
     btns.innerHTML = `
       <a href="${o.link}" class="btns"
               ><button>Buy Piece</button></a
-            >
-      <a href="" class="btns"
+            >`;
+    if (o.listen) {
+      btns.insertAdjacentHTML(
+        "beforeend",
+        `<a href="" class="btns"
         ><button>Listen</button></a
-      >
-    `;
+      >`
+      );
+    }
   }
 }
 
@@ -266,7 +285,6 @@ function mediaListen(parent) {
   });
 }
 
-const body = document.querySelector("body");
 const container = document.querySelector("#container");
 function blurContainer() {
   container.style.opacity = "20%";
