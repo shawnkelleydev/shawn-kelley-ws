@@ -136,8 +136,7 @@ footer,
   text-align: center;
 }
 
-button,
-.media {
+button {
   border-radius: 20px;
 }
 
@@ -316,9 +315,10 @@ iframe {
 }
 
 #modal img {
-  border-radius: 20px;
+  max-width: 95vw;
   max-height: 90vh;
-  max-width: 95vh;
+  width: auto;
+  height: auto;
 }
 
 #modal span {
@@ -516,6 +516,7 @@ iframe {
   #dev-menu li,
   #music-menu li {
     top: 70px;
+    max-width: 700px;
   }
 
   .social {

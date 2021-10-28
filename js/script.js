@@ -5,6 +5,7 @@
 ============================================ */
 
 const body = document.querySelector("body");
+const modal = document.querySelector("#modal");
 //divs
 const banner = document.querySelector("#banner");
 const about = document.querySelector("#about");
@@ -165,6 +166,10 @@ body.addEventListener("click", (e) => {
     hide(devMenu);
     hide(musicMenu);
   }
+  if (e.target.tagName !== "IMG") {
+    restoreContainer();
+    modal.innerHTML = ``;
+  }
 });
 
 //gets object from library
@@ -269,7 +274,7 @@ function mediaListen(parent) {
   media.addEventListener("click", (e) => {
     if (e.target.tagName === "IMG") {
       const src = e.target.getAttribute("src");
-      const modal = document.querySelector("#modal");
+
       modal.innerHTML = ``;
       modal.innerHTML = `
       <span><p>X</p></span>
@@ -293,3 +298,10 @@ function blurContainer() {
 function restoreContainer() {
   container.style.opacity = "100%";
 }
+
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    restoreContainer();
+    modal.innerHTML = ``;
+  }
+});

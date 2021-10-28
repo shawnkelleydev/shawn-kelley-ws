@@ -86,6 +86,12 @@ const compositions = [
     length: "apx. 12 minutes",
     challenge: "hard",
     link: "https://www.cimarronmusic.com/urban-suite-8504",
+    media: [
+      "img/pieces/us.jpg",
+      "img/pieces/brink.jpg",
+      "img/pieces/funkaru.jpeg",
+      "img/pieces/us_cover.jpeg",
+    ],
   },
   {
     name: "An Off Day",
