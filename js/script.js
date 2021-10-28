@@ -74,6 +74,8 @@ function menuListenerCB(e) {
     //hide stuff
     hide(devMenu);
     hide(musicMenu);
+    //clear media
+    media.innerHTML = ``;
     banner.innerHTML = `
       <img
         class="banner"
@@ -176,7 +178,7 @@ function setBanner(o) {
   } else if (o.video) {
     banner.innerHTML = o.video;
   } else {
-    banner.innerHTML = `<img src="${o.img}" alt="${o.alt}">`;
+    banner.innerHTML = `<img src="${o.img}" alt="${o.alt}" class="banner">`;
   }
 }
 
