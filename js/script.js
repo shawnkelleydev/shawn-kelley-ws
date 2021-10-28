@@ -228,7 +228,6 @@ function writeMedia(o) {
   //clear previous content
   media.innerHTML = ``;
   if (o.media) {
-    console.log(o.media.length);
     for (let i = 0; i < o.media.length; i++) {
       media.insertAdjacentHTML(
         "beforeend",
