@@ -234,5 +234,44 @@ function writeMedia(o) {
         `<img src="${o.media[i]}" class="media">`
       );
     }
+
+    mediaListen(media);
   }
+}
+
+/* ============================================
+  
+                    MODALS
+
+============================================ */
+
+//callback in writeMedia
+function mediaListen(parent) {
+  media.addEventListener("click", (e) => {
+    if (e.target.tagName === "IMG") {
+      const src = e.target.getAttribute("src");
+      const modal = document.querySelector("#modal");
+      modal.innerHTML = ``;
+      modal.innerHTML = `
+      <span><p>X</p></span>
+      <img src=${src}>
+      `;
+      blurContainer();
+      const x = modal.querySelector("p");
+      x.addEventListener("click", () => {
+        modal.innerHTML = ``;
+        restoreContainer();
+      });
+    }
+  });
+}
+
+const body = document.querySelector("body");
+const container = document.querySelector("#container");
+function blurContainer() {
+  container.style.opacity = "20%";
+}
+
+function restoreContainer() {
+  container.style.opacity = "100%";
 }

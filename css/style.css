@@ -19,7 +19,7 @@ html {
   margin: 0;
   padding: 0;
   width: 100%;
-  transition: all 0.3s ease;
+  /* transition: all 0.3s ease; */
 }
 
 :root {
@@ -119,7 +119,9 @@ p,
 
 li,
 button,
-.social {
+.social,
+.media,
+#modal p {
   cursor: pointer;
 }
 
@@ -182,7 +184,7 @@ iframe {
 ======== */
 
 .social {
-  width: 50px;
+  width: 80px;
   border-radius: 10px;
 }
 
@@ -279,7 +281,7 @@ iframe {
 
 #profile {
   background: var(--profile);
-  border-radius: 40px;
+  border-radius: 120px 120px 40px 40px;
   height: 900px;
 }
 
@@ -296,6 +298,36 @@ iframe {
 
 #content {
   border-radius: 0 0 40px 40px;
+}
+
+#modal {
+  position: fixed;
+  display: block;
+  text-align: right;
+  max-width: 1000px;
+}
+
+#modal img {
+  border-radius: 20px;
+}
+
+#modal span {
+  display: flex;
+  flex-direction: column;
+  height: 80px;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  top: 72px;
+}
+
+#modal p {
+  padding: 20px;
+  margin: 0;
+  background-color: rgb(54, 54, 54);
+  width: 70px;
+  text-align: center;
+  border-radius: 0 20px 0 20px;
 }
 
 /* =============
@@ -326,6 +358,18 @@ iframe {
   opacity: 50%;
 }
 
+/* =================
+
+  PHONE SIDEWAYS
+  
+================== */
+
+@media (max-height: 375px) {
+  #modal {
+    position: absolute;
+  }
+}
+
 /* =======
 
   ≥IPAD
@@ -352,7 +396,7 @@ iframe {
     grid-column: 1/2;
     grid-row: 1/3;
     border-radius: 120px;
-    height: 750px;
+    height: 800px;
   }
 
   #headshot {
