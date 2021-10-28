@@ -166,6 +166,7 @@ footer p {
 
 iframe {
   background: white;
+  border-radius: 40px 40px 0 0;
 }
 
 /* ========
@@ -344,10 +345,6 @@ iframe {
   #headshot {
     margin-top: 20px;
     width: 200px;
-  }
-
-  iframe {
-    border-radius: 40px 40px 0 0;
   }
 
   #menu {
