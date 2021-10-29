@@ -90,7 +90,9 @@ p,
 
 #dev-menu,
 #music-menu {
-  position: absolute;
+  /* position: absolute; */
+  position: sticky;
+  top: 90px;
   height: auto;
   display: none;
   width: 60%;
@@ -102,8 +104,8 @@ p,
   height: 60px;
   justify-content: center;
   align-items: center;
-  position: relative;
-  top: 90px;
+  /* position: relative;
+  top: 90px; */
 }
 
 #dev-menu li:last-child,
@@ -240,6 +242,11 @@ iframe {
 } */
 
 #banner {
+}
+
+#menu {
+  position: sticky;
+  top: 0;
 }
 
 #menu li {
@@ -511,6 +518,11 @@ iframe {
 
   .media {
     align-self: flex-start;
+  }
+
+  #dev-menu,
+  #music-menu {
+    top: 70px;
   }
 
   #dev-menu li,

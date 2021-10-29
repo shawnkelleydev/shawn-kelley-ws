@@ -303,5 +303,7 @@ window.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     restoreContainer();
     modal.innerHTML = ``;
+    hide(devMenu);
+    hide(musicMenu);
   }
 });
