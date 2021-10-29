@@ -346,6 +346,20 @@ iframe {
   border-radius: 20px;
 }
 
+#live {
+  position: absolute;
+}
+
+#live p {
+  position: relative;
+  top: 20px;
+  left: 20px;
+  width: 50px;
+  text-align: center;
+  background-color: black;
+  color: red;
+}
+
 /* =============
 
   HOVER/ACTIVE

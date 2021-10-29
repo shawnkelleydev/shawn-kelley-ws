@@ -193,7 +193,8 @@ function getObject(e) {
 function setBanner(o) {
   if (o.live) {
     banner.innerHTML = `
-    <iframe src="${o.live}" height=600>
+    <iframe src="${o.live}" height=600></iframe>
+    <span id="live"><p>LIVE</p></span>
     `;
   } else if (o.video) {
     banner.innerHTML = o.video;
