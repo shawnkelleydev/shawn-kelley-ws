@@ -253,6 +253,7 @@ iframe {
   align-items: center;
   justify-content: center;
   height: 100%;
+  box-shadow: 0 0 10px black;
 }
 
 #menu li:first-child {
