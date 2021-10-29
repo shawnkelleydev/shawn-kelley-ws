@@ -358,6 +358,7 @@ iframe {
   text-align: center;
   background-color: black;
   color: red;
+  box-shadow: 0 0 10px red;
 }
 
 /* =============
