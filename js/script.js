@@ -197,7 +197,8 @@ function setBanner(o) {
     <span id="live"><p>LIVE</p></span>
     `;
   } else if (o.video) {
-    banner.innerHTML = o.video;
+    banner.innerHTML =
+      o.video + `<span id="live"><p style="width: 100px">YouTube</p></span>`;
   } else {
     banner.innerHTML = `<img src="${o.img}" alt="${o.alt}" class="banner">`;
   }

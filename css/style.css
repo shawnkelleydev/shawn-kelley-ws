@@ -359,6 +359,12 @@ iframe {
   background-color: black;
   color: red;
   box-shadow: 0 0 10px red;
+  cursor: default;
+}
+
+#live p:hover {
+  color: white;
+  box-shadow: 0 0 10px white;
 }
 
 /* =============
