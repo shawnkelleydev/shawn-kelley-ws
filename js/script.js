@@ -86,7 +86,7 @@ function menuListenerCB(e) {
       />`;
     title.innerHTML = ``;
     //write bio
-    btns.innerHTML = `<a href="mailto:shawnkelley7@gmail.com" class="btns"><button>Contact Me</button></a>`;
+    btns.innerHTML = aboutBtn;
     description.innerHTML = bio; //in bio.js
   }
 }

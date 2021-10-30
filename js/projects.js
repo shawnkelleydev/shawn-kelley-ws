@@ -22,6 +22,13 @@ const tech = [
     media: ["img/tomorrow_land/full.png", "img/tomorrow_land/edit.png"],
   },
   {
+    name: "WhitneyKelley.com",
+    live: "http://whitneykelley.com",
+    github: "https://github.com/shawnkelleyart/whitneykelley-ws",
+    description:
+      "<p>This project was for a very special and most demanding client: my wife, Whitney.  It's responsive and utilizes JavaScript to populate upcoming performance information as well as the private lessons section.</p>",
+  },
+  {
     name: "Random Quotes",
     img: "img/project-1/green_king.png",
     live: "https://shawnkelleyart.github.io/techdegree-project-1/",
