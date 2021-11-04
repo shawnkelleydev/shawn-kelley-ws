@@ -19,7 +19,6 @@ const tech = [
     github: "https://github.com/shawnkelleyart/TomorrowLand",
     description:
       "<p>Tomorrow Land is a simple, easy to use budgeting app.  It works great on mobile because it keeps input and balance fields where you can see them -- no scrolling required.</p><p>Tomorrow Land: Shape Tomorrow Today.</p>",
-    media: ["img/tomorrow_land/full.png", "img/tomorrow_land/edit.png"],
   },
   {
     name: "WhitneyKelley.com",
